@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function SubmitForm(event){
+            event.preventDefault();
+
+            const form=document.forms['regform']
+            const data=new Map();
+
+            data.set("Firstname",form.Firstname.value)
+            data.set("Middlename",form.Middlename.value)
+            data.set("Lastname",form.Lastname.value)
+
+            document.write("<table border='3'><tr>")
+            document.write("<th>Firstname</th><th>Middlename</th><th>Lastname</th>")
+            document.write("</tr><tr>")
+            document.write("<td>"+data.get("Firstname")+"</td>")
+            document.write("<td>"+data.get("Middlename")+"</td>")
+            document.write("<td>"+data.get("Lastname")+"</td>")
+            document.write("</table></tr>")
+        }
+    </script>
+</head>
+<body>
+    <form name="regform">
+        <input placeholder="firstname" name="Firstname">
+        <input placeholder="middlename" name="Middlename">
+        <input placeholder="lastname" name="Lastname">
+        <button onclick="SubmitForm(event)">SubmitForm</button>
+    </form>
+</body>
+</html>
